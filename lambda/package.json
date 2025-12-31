@@ -1,0 +1,16 @@
+{
+  "name": "ses-form-handler",
+  "version": "1.0.0",
+  "description": "Lambda function to handle contact form submissions via AWS SES",
+  "main": "ses-form-handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1691.0",
+    "stripe": "^14.0.0"
+  },
+  "author": "",
+  "license": "ISC"
+}
+

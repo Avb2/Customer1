@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Security Products - Allied Strategic Operations Partners</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <!-- Content Configuration - Load before content-loader -->
+    <script src="../../content.js"></script>
+    <script src="../../content-loader.js"></script>
+    <style>
+        .partner-hero {
+            background: linear-gradient(135deg, var(--navy-primary) 0%, var(--navy-muted) 100%);
+            color: var(--bg-white);
+            padding: 8rem 0 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .partner-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('../../assets/soldiers.jpg') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+        .partner-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        .partner-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        .partner-hero p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+        .partner-logo-section {
+            text-align: center;
+            padding: 2rem 0;
+            background-color: var(--bg-white);
+            border-bottom: 2px solid var(--gold);
+        }
+        .partner-logo-section img {
+            max-width: 200px;
+            height: auto;
+        }
+        .partner-content {
+            padding: 4rem 0;
+            background-color: var(--bg-white);
+        }
+        .partner-section {
+            margin-bottom: 4rem;
+        }
+        .partner-section h2 {
+            color: var(--navy-primary);
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid var(--gold);
+            padding-bottom: 0.5rem;
+        }
+        .partner-section h3 {
+            color: var(--navy-primary);
+            font-size: 1.75rem;
+            font-weight: 500;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .partner-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--charcoal);
+        }
+        .partner-section p.lead {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--navy-primary);
+            margin-bottom: 1rem;
+        }
+        .partner-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .partner-section ul li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        .partner-section ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        .partner-section p {
+            max-width: 70ch;
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .product-card {
+            background-color: var(--off-white);
+            border: 1px solid var(--steel-gray);
+            border-top: 4px solid var(--gold);
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        .product-card:hover {
+            box-shadow: var(--shadow-lg);
+        }
+        .product-card h3 {
+            color: var(--navy-primary);
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin: 0 0 1rem 0;
+        }
+        .product-card p {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        .product-card ul {
+            margin-top: 1rem;
+        }
+        .product-card ul li {
+            font-size: 0.95rem;
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+        }
+        .cta-section {
+            background: linear-gradient(135deg, var(--navy-primary) 0%, var(--navy-muted) 100%);
+            color: var(--bg-white);
+            padding: 4rem 0;
+            text-align: center;
+        }
+        .cta-section h2 {
+            color: var(--bg-white);
+            border-bottom: 3px solid var(--gold);
+            display: inline-block;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            .partner-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-company-name">ALLIED STRATEGIC OPERATIONS</div>
+            <div class="container">
+                <ul class="nav-links nav-links-left">
+                    <li><a href="../../index.html#home">Home</a></li>
+                    <li class="nav-item-dropdown">
+                        <a href="../../index.html#services" class="nav-link-dropdown" id="servicesDropdownTrigger" aria-haspopup="true" aria-expanded="false">Services <svg class="nav-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1l4 4 4-4"/></svg></a>
+                        <div class="nav-dropdown" id="servicesDropdown" role="menu">
+                            <ul class="nav-dropdown-list">
+                                <li><a href="../services/training-services.html" role="menuitem">Training Services</a></li>
+                                <li><a href="../services/cybersecurity-solutions.html" role="menuitem">Cybersecurity Solutions</a></li>
+                                <li><a href="../services/acquisition-services.html" role="menuitem">Acquisition Services</a></li>
+                                <li><a href="../services/logistics-supply-chain.html" role="menuitem">Logistics & Supply Chain</a></li>
+                                <li><a href="../services/government-contracts.html" role="menuitem">Government Contracts</a></li>
+                                <li><a href="../services/clinical-lab-services.html" role="menuitem">Clinical Lab Services & Setup</a></li>
+                                <li class="nav-dropdown-divider"></li>
+                                <li><a href="../../index.html#services" role="menuitem">All Services</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <div class="logo">
+                    <a href="../../index.html#home">
+                        <img src="../../assets/logo.png" alt="Allied Strategic Operations Logo" class="logo-image">
+                    </a>
+                </div>
+                <ul class="nav-links nav-links-right">
+                    <li class="nav-item-dropdown">
+                        <a href="../../index.html#affiliates" class="nav-link-secondary nav-link-dropdown" id="partnersDropdownTrigger" aria-haspopup="true" aria-expanded="false">Partners <svg class="nav-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1l4 4 4-4"/></svg></a>
+                        <div class="nav-dropdown" id="partnersDropdown" role="menu">
+                            <ul class="nav-dropdown-list">
+                                <li><a href="technology-solutions.html" role="menuitem">Technology Solutions</a></li>
+                                <li><a href="security-products.html" role="menuitem">Security Products</a></li>
+                                <li><a href="professional-services.html" role="menuitem">Professional Services</a></li>
+                                <li class="nav-dropdown-divider"></li>
+                                <li><a href="../../index.html#affiliates" role="menuitem">All Strategic Partners</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="../../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="partner-hero">
+        <div class="container partner-hero-content">
+            <h1>Security Products</h1>
+            <p>Security products and services for critical infrastructure protection.</p>
+        </div>
+    </section>
+
+    <section class="partner-logo-section">
+        <div class="container">
+            <img src="../../assets/navy.png" alt="Security Products Partner" loading="lazy">
+        </div>
+    </section>
+
+    <section class="partner-content">
+        <div class="container">
+            <div class="partner-section">
+                <h2>Overview</h2>
+                <p class="lead">Our Security Products partner delivers security solutions to protect critical infrastructure and mission-critical operations.</p>
+                <p>Through our partnership, we provide access to security products, threat detection systems, and security services. Our partner specializes in developing security solutions that meet government and enterprise standards.</p>
+                <ul>
+                    <li><strong>Advanced threat detection</strong> and prevention systems</li>
+                    <li><strong>Physical security solutions</strong> for facilities and infrastructure</li>
+                    <li><strong>Access control systems</strong> with multi-factor authentication</li>
+                    <li><strong>24/7 security monitoring</strong> and incident response</li>
+                </ul>
+            </div>
+
+            <div class="partner-section">
+                <h2>Security Products & Services</h2>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <h3>Physical Security Systems</h3>
+                        <p>Comprehensive physical security solutions protecting facilities, perimeters, and critical infrastructure from unauthorized access and threats.</p>
+                        <ul>
+                            <li>Surveillance and monitoring systems</li>
+                            <li>Perimeter security and intrusion detection</li>
+                            <li>Access control and biometric systems</li>
+                            <li>Security cameras and video analytics</li>
+                        </ul>
+                    </div>
+
+                    <div class="product-card">
+                        <h3>Network Security</h3>
+                        <p>Advanced network security products protecting against cyber threats, unauthorized access, and data breaches.</p>
+                        <ul>
+                            <li>Firewalls and intrusion prevention</li>
+                            <li>Network monitoring and analysis</li>
+                            <li>VPN and secure connectivity solutions</li>
+                            <li>DDoS protection and mitigation</li>
+                        </ul>
+                    </div>
+
+                    <div class="product-card">
+                        <h3>Identity & Access Management</h3>
+                        <p>Robust identity and access management solutions ensuring only authorized personnel can access critical systems and data.</p>
+                        <ul>
+                            <li>Multi-factor authentication systems</li>
+                            <li>Single sign-on (SSO) solutions</li>
+                            <li>Identity governance and administration</li>
+                            <li>Privileged access management</li>
+                        </ul>
+                    </div>
+
+                    <div class="product-card">
+                        <h3>Threat Detection & Response</h3>
+                        <p>Advanced threat detection and response systems providing real-time monitoring and rapid incident response capabilities.</p>
+                        <ul>
+                            <li>Security information and event management (SIEM)</li>
+                            <li>Endpoint detection and response (EDR)</li>
+                            <li>Threat intelligence platforms</li>
+                            <li>Automated incident response systems</li>
+                        </ul>
+                    </div>
+
+                    <div class="product-card">
+                        <h3>Data Protection</h3>
+                        <p>Comprehensive data protection solutions safeguarding sensitive information through encryption, backup, and recovery systems.</p>
+                        <ul>
+                            <li>Data encryption and tokenization</li>
+                            <li>Backup and disaster recovery</li>
+                            <li>Data loss prevention (DLP)</li>
+                            <li>Secure data storage solutions</li>
+                        </ul>
+                    </div>
+
+                    <div class="product-card">
+                        <h3>Security Consulting</h3>
+                        <p>Expert security consulting services helping organizations assess risks, develop security strategies, and implement best practices.</p>
+                        <ul>
+                            <li>Security risk assessments</li>
+                            <li>Security architecture design</li>
+                            <li>Compliance and audit support</li>
+                            <li>Security training and awareness</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="partner-section">
+                <h2>How We Work Together</h2>
+                <p>Allied Strategic Operations works with our Security Products partner to deliver security solutions protecting critical infrastructure while supporting operational objectives.</p>
+                <p>Our collaborative approach includes:</p>
+                <ul>
+                    <li><strong>Security Integration:</strong> Security products integrated with our cybersecurity services and training programs</li>
+                    <li><strong>Unified Security Strategy:</strong> Coordinated approach combining product deployment with security consulting</li>
+                    <li><strong>Joint Assessments:</strong> Collaborative security assessments identifying risks and recommending solutions</li>
+                    <li><strong>Coordinated Implementation:</strong> Security products deployed alongside our operational services</li>
+                </ul>
+            </div>
+
+            <div class="partner-section">
+                <h2>Integration With Our Services</h2>
+                <p>Security Products seamlessly integrate with Allied Strategic Operations' comprehensive service offerings. Our security partner enhances our cybersecurity services, supports our training programs with security awareness, and provides the security foundation for all our operational services.</p>
+                <p>Whether you need security products as a standalone solution or integrated with our cybersecurity, training, or operational services, we provide a unified approach to meeting your security needs.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Strengthen Your Security Posture?</h2>
+            <p>Contact us today to learn more about our Security Products partner.</p>
+            <a href="../../contact.html" class="btn btn-hero-cta">Request Information</a>
+        </div>
+    </section>
+
+    <footer role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section" aria-label="Company Information">
+                    <h3>Company</h3>
+                    <p class="footer-company-name">Allied Strategic Operations</p>
+                    <p class="footer-tagline">Mission-focused services for government and commercial clients.</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/company/allied-strategic-operations" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <svg class="social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" fill="currentColor"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/alliedstrategicops" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <svg class="social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="currentColor"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/alliedstrategicops" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <svg class="social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" fill="currentColor"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section" aria-label="Quick Links">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../../index.html#home">Home</a></li>
+                        <li><a href="../../index.html#services">Services</a></li>
+                        <li><a href="../../index.html#affiliates">Partners</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section" aria-label="Services">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="../services/training-services.html">Training</a></li>
+                        <li><a href="../services/cybersecurity-solutions.html">Cybersecurity</a></li>
+                        <li><a href="../services/acquisition-services.html">Acquisition Support</a></li>
+                        <li><a href="../services/logistics-supply-chain.html">Logistics</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section" aria-label="Contact and Compliance">
+                    <h3>Contact / Compliance</h3>
+                    <div class="footer-contact-info">
+                        <p>1234 Defense Boulevard<br>Suite 500<br>Arlington, VA 22201</p>
+                        <p><a href="mailto:info@alliedstrategicops.com">info@alliedstrategicops.com</a></p>
+                        <p><a href="tel:+17035551234">(703) 555-1234</a></p>
+                        <p>Response time: within one business day.</p>
+                        <p class="footer-disclaimer">Capability information available upon request.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Allied Strategic Operations. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+</body>
+</html>
+

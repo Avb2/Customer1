@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>Contact Us - Allied Strategic Operations</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Content Configuration - Load before content-loader -->
+    <script src="content.js"></script>
+    <script src="content-loader.js"></script>
+    <style>
+        .contact-hero {
+            background: linear-gradient(135deg, rgba(0, 32, 91, 0.85) 0%, rgba(10, 31, 68, 0.85) 100%);
+            color: var(--bg-white);
+            padding: 8rem 0 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .contact-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('assets/contact.jpg') center/cover;
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+        .contact-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 32, 91, 0.7) 0%, rgba(10, 31, 68, 0.7) 100%);
+            z-index: 1;
+        }
+        .contact-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .contact-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        .contact-hero p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+        .contact-content {
+            padding: 4rem 0;
+            background-color: var(--bg-white);
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+        .contact-info {
+            background-color: var(--off-white);
+            padding: 2.5rem;
+            border: 1px solid var(--steel-gray);
+            border-top: 4px solid var(--gold);
+        }
+        .contact-info h2 {
+            color: var(--navy-primary);
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid var(--gold);
+            padding-bottom: 0.5rem;
+        }
+        .contact-info-item {
+            margin-bottom: 2rem;
+        }
+        .contact-info-item h3 {
+            color: var(--navy-primary);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .contact-info-item p,
+        .contact-info-item a {
+            color: var(--charcoal);
+            font-size: 1rem;
+            line-height: 1.8;
+            text-decoration: none;
+        }
+        .contact-info-item a:hover {
+            color: var(--navy-primary);
+            text-decoration: underline;
+        }
+        .office-locations {
+            margin-top: 4rem;
+        }
+        .office-locations h2 {
+            color: var(--navy-primary);
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            border-bottom: 3px solid var(--gold);
+            padding-bottom: 0.5rem;
+        }
+        .offices-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .office-card {
+            background-color: var(--off-white);
+            border: 1px solid var(--steel-gray);
+            border-top: 4px solid var(--gold);
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        .office-card:hover {
+            box-shadow: var(--shadow-lg);
+        }
+        .office-card h3 {
+            color: var(--navy-primary);
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        .office-card p {
+            color: var(--charcoal);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 0.75rem;
+        }
+        .business-hours {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--steel-gray);
+        }
+        .business-hours h3 {
+            color: var(--navy-primary);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .business-hours p {
+            color: var(--charcoal);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+        }
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .offices-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-company-name">ALLIED STRATEGIC OPERATIONS</div>
+            <div class="container">
+                <ul class="nav-links nav-links-left">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li class="nav-item-dropdown">
+                        <a href="index.html#services" class="nav-link-dropdown" id="servicesDropdownTrigger" aria-haspopup="true" aria-expanded="false">Services <svg class="nav-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1l4 4 4-4"/></svg></a>
+                        <div class="nav-dropdown" id="servicesDropdown" role="menu">
+                            <ul class="nav-dropdown-list">
+                                <li><a href="com/services/training-services.html" role="menuitem">Training Services</a></li>
+                                <li><a href="com/services/cybersecurity-solutions.html" role="menuitem">Cybersecurity Solutions</a></li>
+                                <li><a href="com/services/acquisition-services.html" role="menuitem">Acquisition Services</a></li>
+                                <li><a href="com/services/logistics-supply-chain.html" role="menuitem">Logistics & Supply Chain</a></li>
+                                <li><a href="com/services/government-contracts.html" role="menuitem">Government Contracts</a></li>
+                                <li><a href="com/services/clinical-lab-services.html" role="menuitem">Clinical Lab Services & Setup</a></li>
+                                <li class="nav-dropdown-divider"></li>
+                                <li><a href="index.html#services" role="menuitem">All Services</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <div class="logo">
+                    <a href="index.html#home">
+                        <img src="assets/logo.png" alt="Allied Strategic Operations Logo" class="logo-image">
+                    </a>
+                </div>
+                <ul class="nav-links nav-links-right">
+                    <li class="nav-item-dropdown">
+                        <a href="index.html#affiliates" class="nav-link-secondary nav-link-dropdown" id="partnersDropdownTrigger" aria-haspopup="true" aria-expanded="false">Partners <svg class="nav-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1l4 4 4-4"/></svg></a>
+                        <div class="nav-dropdown" id="partnersDropdown" role="menu">
+                            <ul class="nav-dropdown-list">
+                                <li><a href="com/partners/technology-solutions.html" role="menuitem">Technology Solutions</a></li>
+                                <li><a href="com/partners/security-products.html" role="menuitem">Security Products</a></li>
+                                <li><a href="com/partners/professional-services.html" role="menuitem">Professional Services</a></li>
+                                <li class="nav-dropdown-divider"></li>
+                                <li><a href="index.html#affiliates" role="menuitem">All Strategic Partners</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="contact-hero">
+        <div class="container contact-hero-content">
+            <h1>Contact Us</h1>
+            <p>Get in touch with our team to discuss your mission-critical needs.</p>
+        </div>
+    </section>
+
+    <section class="contact-content">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    <div class="contact-info-item">
+                        <h3>General Inquiries</h3>
+                        <p><strong>Email:</strong> <a href="mailto:info@alliedstrategicops.com">info@alliedstrategicops.com</a></p>
+                        <p><strong>Phone:</strong> <a href="tel:+17035551234">(703) 555-1234</a></p>
+                    </div>
+
+                     <div class="contact-info-item" style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--steel-gray);">
+                        <h3>Headquarters - Arlington, VA</h3>
+                        <p><strong>Address:</strong><br>
+                        1234 Defense Boulevard<br>
+                        Suite 500<br>
+                        Arlington, VA 22201</p>
+                        <p><strong>Phone:</strong> <a href="tel:+17035551234">(703) 555-1234</a></p>
+                        <p><strong>Email:</strong> <a href="mailto:arlington@alliedstrategicops.com">arlington@alliedstrategicops.com</a></p>
+                    </div>
+                    
+                    <div class="business-hours">
+                        <h3>Business Hours</h3>
+                        <p><strong>Monday - Friday:</strong> 8:00 AM - 6:00 PM EST</p>
+                        <p><strong>Saturday:</strong> 9:00 AM - 2:00 PM EST</p>
+                        <p><strong>Sunday:</strong> Closed</p>
+                        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--steel-gray);">Emergency support available 24/7 for active contracts</p>
+                    </div>
+
+                   
+                </div>
+
+                <div>
+                    <form id="enquiryForm" class="enquiry-form">
+                        <h2 style="color: var(--navy-primary); font-size: 2rem; font-weight: 400; margin-bottom: 1.5rem; border-bottom: 3px solid var(--gold); padding-bottom: 0.5rem;">Send Us a Message</h2>
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company/Organization</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a service...</option>
+                                <option value="Training Services">Training Services</option>
+                                <option value="Cybersecurity Solutions">Cybersecurity Solutions</option>
+                                <option value="Acquisition Services">Acquisition Services</option>
+                                <option value="Logistics & Supply Chain">Logistics & Supply Chain</option>
+                                <option value="Government Contracts">Government Contracts</option>
+                                <option value="General Inquiry">General Inquiry</option>
+                                <option value="Partnership Opportunities">Partnership Opportunities</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <div id="formMessage" class="form-message"></div>
+                    </form>
+                </div>
+            </div>
+
+         
+
+            <div style="margin-top: 4rem; padding: 3rem; background-color: var(--off-white); border: 1px solid var(--steel-gray); border-top: 4px solid var(--gold);">
+                <h2 style="color: var(--navy-primary); font-size: 2rem; font-weight: 400; margin-bottom: 1.5rem; border-bottom: 3px solid var(--gold); padding-bottom: 0.5rem;">Get Started</h2>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--charcoal); margin-bottom: 1.5rem;">
+                    Allied Strategic Operations supports government agencies, prime contractors, and commercial partners across training, cybersecurity, acquisition, and logistics.
+                </p>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--charcoal); margin-bottom: 1.5rem;">
+                    Use the form below to request information or coordinate next steps. Inquiries are reviewed by subject-matter personnel for accurate response.
+                </p>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--charcoal);">
+                    <strong>Response time:</strong> Within one business day.<br>
+                    <strong>Urgent matters:</strong> Please contact our main line and request immediate assistance.
+                </p>
+            </div>
+
+            <div class="contact-social-section">
+                <div class="contact-social-container">
+                    <h3 class="contact-social-label">Official Channels</h3>
+                    <p class="contact-social-description">External communication channels for official updates and professional networking.</p>
+                    <div class="contact-social-links">
+                        <a href="https://www.linkedin.com/company/allied-strategic-operations" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="contact-social-link">
+                            <svg class="contact-social-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" fill="currentColor"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/alliedstrategicops" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="contact-social-link">
+                            <svg class="contact-social-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="currentColor"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/alliedstrategicops" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="contact-social-link">
+                            <svg class="contact-social-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" fill="currentColor"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section" aria-label="Company Information">
+                    <h3>Company</h3>
+                    <p class="footer-company-name">Allied Strategic Operations</p>
+                    <p class="footer-tagline">Mission-focused services for government and commercial clients.</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/company/allied-strategic-operations" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <svg class="social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" fill="currentColor"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/alliedstrategicops" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <svg class="social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="currentColor"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/alliedstrategicops" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <svg class="social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" fill="currentColor"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section" aria-label="Quick Links">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#affiliates">Partners</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section" aria-label="Services">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="com/services/training-services.html">Training</a></li>
+                        <li><a href="com/services/cybersecurity-solutions.html">Cybersecurity</a></li>
+                        <li><a href="com/services/acquisition-services.html">Acquisition Support</a></li>
+                        <li><a href="com/services/logistics-supply-chain.html">Logistics</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section" aria-label="Contact and Compliance">
+                    <h3>Contact / Compliance</h3>
+                    <div class="footer-contact-info">
+                        <p>1234 Defense Boulevard<br>Suite 500<br>Arlington, VA 22201</p>
+                        <p><a href="mailto:info@alliedstrategicops.com">info@alliedstrategicops.com</a></p>
+                        <p><a href="tel:+17035551234">(703) 555-1234</a></p>
+                        <p>Response time: within one business day.</p>
+                        <p class="footer-disclaimer">Capability information available upon request.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Allied Strategic Operations. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
